@@ -35,6 +35,18 @@ class KeyValueCollection extends AbstractCollection implements KeyValueCollectio
             array_key_exists($this->keyMap[strtolower($key)], $this->collection);
     }
 
+	/**
+	 * Alias to getOptional()
+	 *
+	 * @param string $key
+	 * @param null $defaultValue
+	 * @return mixed|null
+	 */
+    public function get(string $key, $defaultValue = null)
+	{
+		return $this->getOptional($key, $defaultValue);
+	}
+
     /**
      * @param string $key
      *
